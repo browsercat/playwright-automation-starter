@@ -16,6 +16,10 @@
     "dev:watch": "dotenv -- tsx --watch src/index.ts",
     "test": "dotenv -- playwright test",
     "test:watch": "dotenv -- playwright test --ui",
+    "dev:bcat:watch": "dotenv -v BCAT=1 -- tsx --watch src/index.ts",
+    "dev:bcat": "dotenv -v BCAT=1 -- tsx src/index.ts",
+    "test:bcat": "dotenv -v BCAT=1 -- playwright test",
+    "test:bcat:watch": "dotenv -v BCAT=1 -- playwright test --ui",
     "clean": "rm -rf .test",
     "type": "tsc --noEmit"
   },
