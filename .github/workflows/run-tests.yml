@@ -1,0 +1,57 @@
+name: Run tests
+
+concurrency:
+  group: ${{github.ref}}/${{github.workflow}}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+permissions:
+  actions: read
+  contents: read
+  packages: read
+
+env:
+  BROWSERCAT_API_KEY: ${{secrets.BROWSERCAT_API_KEY}}
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Set up PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          cache: pnpm
+          node-version-file: .nvmrc
+          check-latest: true
+
+      - name: Install Deps
+        run: |
+          pnpm install --frozen-lockfile
+
+      - name: Test
+        run: |
+          pnpm run test:bcat
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: .test/spec/results/
+          retention-days: 30

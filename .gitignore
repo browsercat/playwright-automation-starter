@@ -1,3 +1,7 @@
+# Outputs directories
+.test
+.output
+
 # Logs
 logs
 *.log

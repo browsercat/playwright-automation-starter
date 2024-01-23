@@ -1,0 +1,26 @@
+{
+  "name": "@browsercat/automation-starter",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "dotenv -- tsx src/index.ts",
+    "dev:watch": "dotenv -- tsx --watch src/index.ts",
+    "test": "dotenv -- playwright test",
+    "test:watch": "dotenv -- playwright test --ui",
+    "clean": "rm -rf .test",
+    "type": "tsc --noEmit"
+  },
+  "dependencies": {
+    "playwright": "1.41.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.41.1",
+    "@tsconfig/node20": "20.1.2",
+    "@tsconfig/strictest": "2.0.2",
+    "@types/node": "=20",
+    "dotenv-cli": "7.3.0",
+    "tsx": "4.7.0",
+    "typescript": "5.3.3"
+  }
+}
