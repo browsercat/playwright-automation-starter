@@ -1,6 +1,14 @@
 {
-  "name": "@browsercat/automation-starter",
+  "name": "@browsercat/playwright-automation-starter",
   "version": "1.0.0",
+  "description": "Awesome boilerplate for writing browser automations using Playwright, with debugging and tests ready to go.",
+  "keywords": ["playwright", "browser automation", "typescript", "headless browsers", "web scraping", "web crawler", "browser testing"],
+  "author": {
+    "name": "BrowserCat",
+    "email": "contact@browsercat.com",
+    "url": "https://www.browsercat.com"
+  },
+  "license": "MIT",
   "type": "module",
   "private": true,
   "scripts": {

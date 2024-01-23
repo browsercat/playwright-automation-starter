@@ -1,4 +1,4 @@
-# Browser Automation Starter Repo
+# Playwright Automation Starter Repo
 
 If you want to crawl, scrape, sync, record, download, aggregate, automate, or generate with ease, this is the starter for you.
 
