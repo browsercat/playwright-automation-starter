@@ -8,7 +8,7 @@ import fs from 'fs/promises';
 
 test('performs grab-bag of tasks', async ({browser}) => {
   const {
-    footerLinks, blogHeaderImage, pdfFile, videoFile,
+    footerLinks, imageFile, pdfFile, videoFile,
   } = await automate(browser);
   
   // assert the scraped data is valid
@@ -23,14 +23,10 @@ test('performs grab-bag of tasks', async ({browser}) => {
 
   // check that generated media match the previous snapshot
 
-  expect(blogHeaderImage).toMatchSnapshot();
+  expect(await fs.readFile(imageFile)).toMatchSnapshot();
 
   // check that the pdf and video simply exists
 
-  expect(() => {
-    fs.access(pdfFile, fs.constants.F_OK);
-  }).not.toThrowError();
-  expect(() => {
-    fs.access(videoFile, fs.constants.F_OK);
-  }).not.toThrowError();
+  expect(() => fs.access(pdfFile)).not.toThrowError();
+  expect(() => fs.access(videoFile)).not.toThrowError();
 });

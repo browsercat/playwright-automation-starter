@@ -40,9 +40,8 @@ export async function automate(browser: Browser) {
   await page.waitForLoadState();
 
   const $blogHeader = page.locator('header:has(h1)');
-  const blogHeaderImage = await $blogHeader.screenshot({
-    path: `${outputDir}/blog-header.png`,
-  });
+  const imageFile = `${outputDir}/blog-header.png`;
+  await $blogHeader.screenshot({path: imageFile});
 
   // create PDF of entire page
 
@@ -88,7 +87,7 @@ export async function automate(browser: Browser) {
 
   return {
     footerLinks,
-    blogHeaderImage,
+    imageFile,
     pdfFile,
     videoFile,
   };
