@@ -26,7 +26,7 @@ export async function automate(browser: Browser) {
   // automate form-filling
 
   await page.getByLabel('Name').fill('BrowserCat');
-  await page.getByLabel('Email').fill('test@browsercat.com');
+  await page.getByLabel('Email').fill('user@test.browsercat.com');
   await page.getByLabel('Message').fill('This is a simple test.');
 
   const $sendButton = page.locator('button');

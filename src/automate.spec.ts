@@ -17,7 +17,7 @@ test('performs grab-bag of tasks', async ({browser}) => {
     expect(link.text?.length).toBeGreaterThan(0);
     expect(link.link?.length).toBeGreaterThan(0);
     expect(() => {
-      new URL(link.link as string, 'http://test.com');
+      new URL(link.link as string, 'http://localhost');
     }).not.toThrowError();
   });
 
