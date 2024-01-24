@@ -48,7 +48,7 @@ Run the sample automation with the following:
 npm run dev
 ```
 
-Whoa, you scraped BrowserCat! And you generate images and PDFs in `.output/`. Nice.
+Whoa, you scraped BrowserCat! And you generated an image, a PDF, and a video in `./.output`. Sweet.
 
 To tweak the behavior, edit `src/automate.ts`. And watch for changes with:
 
