@@ -67,19 +67,27 @@ export default defineConfig({
         connectOptions,
       },
     },
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-        connectOptions,
-      },
-    },
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-        connectOptions,
-      },
-    },
+    /**
+     * It's better to target a single browser for automations. We prefer 
+     * Chromium-based browsers because they support PDF-generation and 
+     * video-recording.
+     * 
+     * However, your use-case may vary, and you are free to target any or all 
+     * browsers. If so, uncomment these lines and add new config as needed.
+     */
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //     connectOptions,
+    //   },
+    // },
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //     connectOptions,
+    //   },
+    // },
   ],
 });
