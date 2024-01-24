@@ -28,7 +28,7 @@ Features:
 First, clone the starter repo:
 
 ```bash
-git clone https://github.com/browsercat/browser-automation-starter.git
+git clone https://github.com/browsercat/playwright-automation-starter.git automation-starter
 git remote rm origin
 cd automation-starter
 ```
