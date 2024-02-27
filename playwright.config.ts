@@ -31,33 +31,30 @@ export default defineConfig({
   maxFailures: useBC && !isCI ? 0 : 3,
   forbidOnly: isCI,
 
-  ignoreSnapshots: isCI,
-  expect: {
-    toMatchSnapshot: {
-      maxDiffPixelRatio: 0.05,
-    },
-  },
-
   outputDir: '.test/spec/output',
-  snapshotDir: '.test/spec/snaps',
-  snapshotPathTemplate: '{snapshotDir}/{projectName}/{testFilePath}/{arg}{ext}',
-
+  snapshotPathTemplate: '.test/spec/snaps/{projectName}/{testFilePath}/{arg}{ext}',
   testMatch: '*.spec.{ts,tsx}',
-
-  use: {
-    trace: 'on-first-retry',
-  },
-
-  reportSlowTests: {
-    max: 5,
-    threshold: 1000 * 15,
-  },
 
   reporter: [
     ['json', {outputFile: '.test/spec/results.json'}],
     ['html', {outputFolder: '.test/spec/results', open: 'never'}],
     isCI ? ['github'] : ['line'],
   ],
+
+  reportSlowTests: {
+    max: 5,
+    threshold: 1000 * 15,
+  },
+
+  expect: {
+    toMatchSnapshot: {
+      maxDiffPixelRatio: 0.05,
+    },
+  },
+
+  use: {
+    trace: 'on-first-retry',
+  },
 
   projects: [
     {
