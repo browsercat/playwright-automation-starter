@@ -29,15 +29,15 @@ First, clone the starter repo:
 
 ```bash
 git clone https://github.com/browsercat/playwright-automation-starter.git automation-starter
-git remote rm origin
 cd automation-starter
+git remote rm origin
 ```
 
 Next, install your dependencies:
 
 ```bash
 npm install
-npm playwright install
+npx playwright install
 ```
 
 ### 2. Run Your Script Locally
@@ -48,7 +48,7 @@ Run the sample automation with the following:
 npm run dev
 ```
 
-Whoa, you scraped BrowserCat! And you generated an image, a PDF, and a video in `./.output`. Sweet.
+Whoa, you scraped the BrowserCat website! Nice! And you generated an image, a PDF, and a video in `./.output`. Sweet.
 
 To tweak the behavior, edit `src/automate.ts`. And watch for changes with:
 
@@ -58,7 +58,9 @@ npm run dev:watch
 
 ### 3. Run Your Script in the Cloud
 
-The starter is pre-configured to run your code on BrowserCat's infrastructure, then send the response back to your computer.
+In the previous step, you ran the script locally, using local headless browsers. But managing those browsers in the cloud is a huge pain.
+
+Thankfully, the starter repo is pre-configured to run your code on BrowserCat's browser cloud, then send the response back to your computer.
 
 To enable this behavior, sign up for a [forever-free plan](https://app.browsercat.com/sign-up), then [create an API key](https://app.browsercat.com/keys).
 
